@@ -1,13 +1,13 @@
-## after_timestamps
+= after_timestamps
 
-### Summary
+== Summary
 
 Plugin for Ruby on Rails that gives you a way to add a callback to the ActiveRecord
 callback chain that will be executed right after the record's timestamp columns are
 set, but before the record is actually saved to the database. This is useful if you
 want to modify the timestamp values.
 
-### Example
+== Example
 
 Migration:
 
@@ -43,6 +43,6 @@ Now if you say
 `created_at` and `updated_at` will be set, but 2 hours will be subtracted from them
 before they're put into the database.
 
-### License
+== License
 
 (c) 2008 Elliot Winkler. Released under the MIT license.
