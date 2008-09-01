@@ -1,4 +1,4 @@
-module LostInCode
+module McMire
   module AfterTimestamps
     def self.included(klass)
       klass.class_eval do
