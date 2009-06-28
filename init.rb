@@ -1,3 +1,3 @@
-require 'after_timestamps'
+require 'mcmire/after_timestamps'
 
-ActiveRecord::Base.send(:include, McMire::AfterTimestamps)
+ActiveRecord::Base.send(:include, Mcmire::AfterTimestamps)
