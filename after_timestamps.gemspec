@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.files = [
     "README.md",
      "Rakefile",
+     "after_timestamps.gemspec",
      "lib/mcmire/after_timestamps.rb",
      "lib/mcmire/after_timestamps/version.rb",
      "rails/init.rb",
