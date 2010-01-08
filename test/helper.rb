@@ -8,8 +8,6 @@ require 'matchy'
 require 'rr-matchy'
 
 require 'rails/init'
-#require 'activerecord'
-#require 'mcmire/after_timestamps'
 
 class Test::Unit::TestCase
   include RR::Adapters::TestUnit

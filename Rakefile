@@ -9,7 +9,7 @@ begin
     gem.version = Mcmire::AfterTimestamps::VERSION
     gem.name = "after_timestamps"
     gem.summary = %Q{Rails plugin that provides an AR callback right after timestamps are set and before the record is saved}
-    gem.description = %Q{Plugin for Ruby on Rails that gives you a way to add a callback to the ActiveRecord callback chain that will be executed right after the record's timestamp columns are set, but before the record is actually saved to the database. This is useful if you want to modify the timestamp values.}
+    gem.description = %Q{Plugin for Ruby on Rails that gives you a way to add a callback to the ActiveRecord callback chain that will be executed right after the record's timestamp columns are set, but before the record is actually saved to the database. This is useful if you want to do something with the timestamps, such as defaulting another time column to created_at, or rolling back a timestamp by a certain amount.}
     gem.authors = ["Elliot Winkler"]
     gem.email = "elliot.winkler@gmail.com"
     gem.homepage = "http://github.com/mcmire/after_timestamps"
