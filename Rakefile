@@ -9,7 +9,7 @@ begin
     gem.version = Mcmire::ARAfterTimestamps::VERSION
     gem.name = "ar_after_timestamps"
     gem.summary = %Q{Rails gem that provides an AR callback right after timestamps are set and before the record is saved}
-    gem.description = %Q{Gem that plugs into Ruby on Rails that gives you a way to add a callback to the ActiveRecord callback chain that will be executed right after the record's timestamp columns are set, but before the record is actually saved to the database. This is useful if you want to do something with the timestamps, such as defaulting another time column to created_at, or rolling back a timestamp by a certain amount.}
+    gem.description = %Q{A little gem that gives you a way to add a callback to the ActiveRecord callback chain that will be executed right after the record's timestamp columns are set, but before the record is actually saved to the database. This is useful if you want to do something with the timestamps, such as defaulting another time column to created_at, or rolling back a timestamp by a certain amount.}
     gem.authors = ["Elliot Winkler"]
     gem.email = "elliot.winkler@gmail.com"
     gem.homepage = "http://github.com/mcmire/ar_after_timestamps"
@@ -18,6 +18,7 @@ begin
     gem.add_development_dependency "mcmire-matchy", "~> 0.4.1"
     gem.add_development_dependency "mcmire-mocha", "~> 0.9.8"
     gem.add_development_dependency "mocha-protest-integration"
+    #gem.add_development_dependency "yard", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new

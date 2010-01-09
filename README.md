@@ -1,8 +1,8 @@
-# after_timestamps
+# ar_after_timestamps
 
 ## Summary
 
-Plugin for Ruby on Rails that gives you a way to add a callback to the ActiveRecord callback chain that will be executed right after the record's timestamp columns are set, but before the record is actually saved to the database. This is useful if you want to do something with the timestamps, such as defaulting another time column to created_at, or rolling back a timestamp by a certain amount.
+A little gem that gives you a way to add a callback to the ActiveRecord callback chain that will be executed right after the record's timestamp columns are set, but before the record is actually saved to the database. This is useful if you want to do something with the timestamps, such as defaulting another time column to created_at, or rolling back a timestamp by a certain amount.
 
 ## Example
 
@@ -41,18 +41,18 @@ Now if you say
 
 ## Installation
 
-1. Run `gem install after_timestamps` (probably as root)
-2. Add `config.gem 'after_timestamps'` to environment.rb
+1. Run `gem install ar_after_timestamps` (probably as root)
+2. Add `config.gem 'ar_after_timestamps'` to environment.rb
 3. Optionally run `rake gems:build`
 
 ## Support
 
 If you find any bugs with this plugin, feel free to:
 
-* file a bug report in the [Issues area on Github](http://github.com/mcmire/after_timestamps/issues)
-* fork the [project on Github](http://github.com/mcmire/after_timestamps) and send me a pull request
+* file a bug report in the [Issues area on Github](http://github.com/mcmire/ar_after_timestamps/issues)
+* fork the [project on Github](http://github.com/mcmire/ar_after_timestamps) and send me a pull request
 * email me (*firstname* dot *lastname* at gmail dot com)
 
 ## Author/License
 
-(c) 2008-2010 Elliot Winkler. Released under the MIT license.
+(c) 2008-2010 Elliot Winkler. See LICENSE for details.
