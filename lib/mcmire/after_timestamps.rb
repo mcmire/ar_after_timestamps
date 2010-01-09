@@ -72,7 +72,7 @@ module Mcmire
   # update_without_timestamps to do what we want.
   #
   module AfterTimestamps
-    VERSION = "0.1.0"
+    VERSION = "0.2.0"
     
     def self.included(klass)
       klass.class_eval do
