@@ -4,33 +4,34 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{after_timestamps}
+  s.name = %q{ar_after_timestamps}
   s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Elliot Winkler"]
   s.date = %q{2010-01-09}
-  s.description = %q{Plugin for Ruby on Rails that gives you a way to add a callback to the ActiveRecord callback chain that will be executed right after the record's timestamp columns are set, but before the record is actually saved to the database. This is useful if you want to do something with the timestamps, such as defaulting another time column to created_at, or rolling back a timestamp by a certain amount.}
+  s.description = %q{Gem that plugs into Ruby on Rails that gives you a way to add a callback to the ActiveRecord callback chain that will be executed right after the record's timestamp columns are set, but before the record is actually saved to the database. This is useful if you want to do something with the timestamps, such as defaulting another time column to created_at, or rolling back a timestamp by a certain amount.}
   s.email = %q{elliot.winkler@gmail.com}
   s.extra_rdoc_files = [
     "README.md"
   ]
   s.files = [
-    "README.md",
+    ".gitignore",
+     "README.md",
      "Rakefile",
-     "after_timestamps.gemspec",
-     "lib/mcmire/after_timestamps.rb",
+     "ar_after_timestamps.gemspec",
+     "lib/mcmire/ar_after_timestamps.rb",
      "rails/init.rb",
-     "test/after_timestamps_test.rb",
+     "test/ar_after_timestamps_test.rb",
      "test/helper.rb"
   ]
-  s.homepage = %q{http://github.com/mcmire/after_timestamps}
+  s.homepage = %q{http://github.com/mcmire/ar_after_timestamps}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
-  s.summary = %q{Rails plugin that provides an AR callback right after timestamps are set and before the record is saved}
+  s.summary = %q{Rails gem that provides an AR callback right after timestamps are set and before the record is saved}
   s.test_files = [
-    "test/after_timestamps_test.rb",
+    "test/ar_after_timestamps_test.rb",
      "test/helper.rb"
   ]
 
