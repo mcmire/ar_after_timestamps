@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Elliot Winkler"]
-  s.date = %q{2010-01-07}
+  s.date = %q{2010-01-09}
   s.description = %q{Plugin for Ruby on Rails that gives you a way to add a callback to the ActiveRecord callback chain that will be executed right after the record's timestamp columns are set, but before the record is actually saved to the database. This is useful if you want to do something with the timestamps, such as defaulting another time column to created_at, or rolling back a timestamp by a certain amount.}
   s.email = %q{elliot.winkler@gmail.com}
   s.extra_rdoc_files = [
@@ -20,7 +20,6 @@ Gem::Specification.new do |s|
      "Rakefile",
      "after_timestamps.gemspec",
      "lib/mcmire/after_timestamps.rb",
-     "lib/mcmire/after_timestamps/version.rb",
      "rails/init.rb",
      "test/after_timestamps_test.rb",
      "test/helper.rb"
@@ -40,24 +39,24 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<activerecord>, [">= 1.2.6"])
-      s.add_development_dependency(%q<mcmire-context>, [">= 0.5.6"])
-      s.add_development_dependency(%q<mcmire-matchy>, [">= 0.4.1"])
-      s.add_development_dependency(%q<rr>, [">= 0.10.5"])
-      s.add_development_dependency(%q<rr-matchy>, [">= 0.1.0"])
+      s.add_runtime_dependency(%q<activerecord>, ["< 3.0"])
+      s.add_development_dependency(%q<mcmire-protest>, ["~> 0.2.4"])
+      s.add_development_dependency(%q<mcmire-matchy>, ["~> 0.4.1"])
+      s.add_development_dependency(%q<mcmire-mocha>, ["~> 0.9.8"])
+      s.add_development_dependency(%q<mocha-protest-integration>, [">= 0"])
     else
-      s.add_dependency(%q<activerecord>, [">= 1.2.6"])
-      s.add_dependency(%q<mcmire-context>, [">= 0.5.6"])
-      s.add_dependency(%q<mcmire-matchy>, [">= 0.4.1"])
-      s.add_dependency(%q<rr>, [">= 0.10.5"])
-      s.add_dependency(%q<rr-matchy>, [">= 0.1.0"])
+      s.add_dependency(%q<activerecord>, ["< 3.0"])
+      s.add_dependency(%q<mcmire-protest>, ["~> 0.2.4"])
+      s.add_dependency(%q<mcmire-matchy>, ["~> 0.4.1"])
+      s.add_dependency(%q<mcmire-mocha>, ["~> 0.9.8"])
+      s.add_dependency(%q<mocha-protest-integration>, [">= 0"])
     end
   else
-    s.add_dependency(%q<activerecord>, [">= 1.2.6"])
-    s.add_dependency(%q<mcmire-context>, [">= 0.5.6"])
-    s.add_dependency(%q<mcmire-matchy>, [">= 0.4.1"])
-    s.add_dependency(%q<rr>, [">= 0.10.5"])
-    s.add_dependency(%q<rr-matchy>, [">= 0.1.0"])
+    s.add_dependency(%q<activerecord>, ["< 3.0"])
+    s.add_dependency(%q<mcmire-protest>, ["~> 0.2.4"])
+    s.add_dependency(%q<mcmire-matchy>, ["~> 0.4.1"])
+    s.add_dependency(%q<mcmire-mocha>, ["~> 0.9.8"])
+    s.add_dependency(%q<mocha-protest-integration>, [">= 0"])
   end
 end
 

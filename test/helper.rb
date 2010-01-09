@@ -1,15 +1,11 @@
 require 'rubygems'
 
-require 'test/unit'
-gem 'mcmire-context'
-require 'context'
+gem 'mcmire-protest'
+require 'protest'
 gem 'mcmire-matchy'
 require 'matchy'
-require 'rr-matchy'
+gem 'mcmire-mocha'
+require 'mocha'
+require 'mocha-protest-integration'
 
 require 'rails/init'
-
-class Test::Unit::TestCase
-  include RR::Adapters::TestUnit
-  include RRMatchy
-end

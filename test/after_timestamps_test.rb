@@ -5,12 +5,14 @@ ActiveRecord::Base.establish_connection(
   "database" => ":memory:"
 )
 
-ActiveRecord::Schema.define do
-  create_table :posts do |t|
-    t.timestamps
-    t.datetime :posted_at, :null => false
-    t.string :formatted_created_at
-    t.integer :timestamp
+ActiveRecord::Migration.suppress_messages do
+  ActiveRecord::Schema.define do
+    create_table :posts do |t|
+      t.timestamps
+      t.datetime :posted_at, :null => false
+      t.string :formatted_created_at
+      t.integer :timestamp
+    end
   end
 end
 
@@ -28,30 +30,30 @@ class Post < ActiveRecord::Base
   end
 end
 
-class AfterTimestampsTest < Test::Unit::TestCase
+Protest.context("after_timestamps") do
   test "after_timestamps_on_create symbol is called on create" do
-    stub(Time).now { Time.local(2009) }
+    Time.stubs(:now).returns(Time.local(2009))
     post = Post.new
     post.save!
     post.posted_at.should == Time.local(2009)
   end
   
   test "after_timestamps_on_create proc is called on create" do
-    stub(Time).now { Time.local(2009) }
+    Time.stubs(:now).returns(Time.local(2009))
     post = Post.new
     post.save!
     post.formatted_created_at.should == "Jan/2009-01 01/01/09 0000..00"
   end
   
   test "after_timestamps_on_update symbol is called on update" do
-    stub(Time).now { Time.local(2009) }
+    Time.stubs(:now).returns(Time.local(2009))
     post = Post.create!
     post.save!
     post.posted_at.should == Time.local(2008, 12, 30)
   end
   
   test "after_timestamp_on_update proc is called on update" do
-    stub(Time).now { Time.local(2009) }
+    Time.stubs(:now).returns(Time.local(2009))
     post = Post.create!
     post.save!
     post.timestamp.should == 1230789600

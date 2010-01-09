@@ -72,6 +72,8 @@ module Mcmire
   # update_without_timestamps to do what we want.
   #
   module AfterTimestamps
+    VERSION = "0.1.0"
+    
     def self.included(klass)
       klass.class_eval do
         alias_method_chain :create_without_timestamps, :after_timestamps

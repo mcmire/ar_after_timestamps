@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'rake'
 
-require File.dirname(__FILE__) + "/lib/mcmire/after_timestamps/version.rb"
+require File.dirname(__FILE__) + "/lib/mcmire/after_timestamps"
 
 begin
   require 'jeweler'
@@ -13,11 +13,11 @@ begin
     gem.authors = ["Elliot Winkler"]
     gem.email = "elliot.winkler@gmail.com"
     gem.homepage = "http://github.com/mcmire/after_timestamps"
-    gem.add_dependency "activerecord", ">= 1.2.6"
-    gem.add_development_dependency "mcmire-context", ">= 0.5.6"
-    gem.add_development_dependency "mcmire-matchy", ">= 0.4.1"
-    gem.add_development_dependency "rr", ">= 0.10.5"
-    gem.add_development_dependency "rr-matchy", ">= 0.1.0"
+    gem.add_dependency "activerecord", "< 3.0"
+    gem.add_development_dependency "mcmire-protest", "~> 0.2.4"
+    gem.add_development_dependency "mcmire-matchy", "~> 0.4.1"
+    gem.add_development_dependency "mcmire-mocha", "~> 0.9.8"
+    gem.add_development_dependency "mocha-protest-integration"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
@@ -49,12 +49,11 @@ task :test => :check_dependencies
 
 task :default => :test
 
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
-
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "after_timestamps #{version}"
-  rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
+begin
+  require 'yard'
+  YARD::Rake::YardocTask.new
+rescue LoadError
+  task :yardoc do
+    abort "YARD is not available. In order to run yardoc, you must: sudo gem install yard"
+  end
 end
