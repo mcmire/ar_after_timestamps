@@ -27,7 +27,7 @@ end
 
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
+  test.libs << File.dirname(__FILE__) << 'lib' << 'test'
   test.pattern = 'test/**/*_test.rb'
   test.verbose = true
 end
