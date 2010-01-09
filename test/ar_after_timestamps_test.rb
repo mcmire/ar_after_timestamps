@@ -30,7 +30,7 @@ class Post < ActiveRecord::Base
   end
 end
 
-Protest.context("after_timestamps") do
+Protest.context("ar_after_timestamps") do
   test "after_timestamps_on_create symbol is called on create" do
     Time.stubs(:now).returns(Time.local(2009))
     post = Post.new

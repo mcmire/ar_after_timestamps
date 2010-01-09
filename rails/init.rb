@@ -1,7 +1,7 @@
 require 'active_record'
 
-require 'mcmire/after_timestamps'
+require 'mcmire/ar_after_timestamps'
 
 ActiveRecord::Base.class_eval do
-  include Mcmire::AfterTimestamps
+  include Mcmire::ARAfterTimestamps
 end

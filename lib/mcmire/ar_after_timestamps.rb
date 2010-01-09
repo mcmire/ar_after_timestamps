@@ -71,7 +71,7 @@ module Mcmire
   # simply alias_method_chain()'ing create_without_timestamps and
   # update_without_timestamps to do what we want.
   #
-  module AfterTimestamps
+  module ARAfterTimestamps
     VERSION = "0.2.0"
     
     def self.included(klass)
